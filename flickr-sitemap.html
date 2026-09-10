@@ -21,6 +21,12 @@
             <meta name="twitter:title" id="twitterTitle" content="Dan's Flickr Sitemap">
             <meta name="twitter:description" id="twitterDescription" content="Browse 94 collections, 526 albums, and 162,465 photos">
             <meta name="twitter:image" id="twitterImage" content="https://farm66.staticflickr.com/65535/buddyicons/21770216@N08.jpg">
+            <script>
+                const destination = new URL("https://danny316p.github.io/f/flickr-sitemap.html");
+                destination.search = window.location.search;
+                destination.hash = window.location.hash;
+                window.location.replace(destination.href);
+            </script>
 
             <style>
                 /* Light mode (default) */
