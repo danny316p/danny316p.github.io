@@ -93,16 +93,28 @@
                     transform: translateY(0);
                 }
 
-                .collection-level-0 > .collection-header { border-left-color: #1a73e8; }
-                .collection-level-1 > .collection-header { border-left-color: #34a853; }
-                .collection-level-2 > .collection-header { border-left-color: #fbbc04; }
-                .collection-level-3 > .collection-header { border-left-color: #ea4335; }
+                /* Collection level indicators - color coded borders */
+                .collection-level-0 > .collection-header {
+                    border-left-color: #1a73e8;
+                }
+                .collection-level-1 > .collection-header {
+                    border-left-color: #34a853;
+                }
+                .collection-level-2 > .collection-header {
+                    border-left-color: #fbbc04;
+                }
+                .collection-level-3 > .collection-header {
+                    border-left-color: #ea4335;
+                }
 
+                /* GRID */
                 body.grid .albums{
                     display:grid;
                     grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
                     gap:10px
                 }
+
+                /* LIST */
                 body.list .albums{
                     display:flex;
                     flex-direction:column;
@@ -118,6 +130,8 @@
                     object-fit:cover;
                     margin-right:10px
                 }
+
+                /* CARD */
                 .album-card{
                     background:#fff;
                     border-radius:8px;
@@ -152,6 +166,7 @@
                 .meta{font-size:.8em; color:#555; transition: color 0.3s;}
                 .hidden{display:none!important}
 
+                /* Toggle Switch */
                 .toggle-switch {
                     position: relative;
                     display: inline-block;
@@ -159,11 +174,18 @@
                     height: 28px;
                     flex-shrink: 0;
                 }
-                .toggle-switch input { opacity: 0; width: 0; height: 0; }
+                .toggle-switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
                 .toggle-slider {
                     position: absolute;
                     cursor: pointer;
-                    top: 0; left: 0; right: 0; bottom: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
                     background-color: #ccc;
                     transition: .3s;
                     border-radius: 28px;
@@ -179,10 +201,17 @@
                     transition: .3s;
                     border-radius: 50%;
                 }
-                input:checked + .toggle-slider { background-color: #1a73e8; }
-                input:focus + .toggle-slider { box-shadow: 0 0 0 3px rgba(26,115,232,0.2); }
-                input:checked + .toggle-slider:before { transform: translateX(22px); }
+                input:checked + .toggle-slider {
+                    background-color: #1a73e8;
+                }
+                input:focus + .toggle-slider {
+                    box-shadow: 0 0 0 3px rgba(26,115,232,0.2);
+                }
+                input:checked + .toggle-slider:before {
+                    transform: translateX(22px);
+                }
 
+                /* Boxed groups */
                 .boxed-group {
                     display: flex;
                     align-items: center;
@@ -240,8 +269,11 @@
                     border-radius: 4px;
                     transition: background 0.2s, color 0.3s;
                 }
-                .boxed-group button:hover { background: #e9ecef; }
+                .boxed-group button:hover {
+                    background: #e9ecef;
+                }
 
+                /* Controls toggle button in controls bar */
                 .controls-toggle {
                     margin-left: auto;
                     background: none;
@@ -253,8 +285,11 @@
                     transition: background 0.3s, border-color 0.3s;
                     flex-shrink: 0;
                 }
-                .controls-toggle:hover { background: #f0f0f0; }
+                .controls-toggle:hover {
+                    background: #f0f0f0;
+                }
 
+                /* Show controls button (visible when controls are hidden) */
                 .show-controls-btn {
                     background: none;
                     border: 1px solid #ddd;
@@ -265,18 +300,29 @@
                     transition: background 0.3s, border-color 0.3s;
                     flex-shrink: 0;
                 }
-                .show-controls-btn:hover { background: #f0f0f0; }
-                .show-controls-btn.hidden { display: none; }
+                .show-controls-btn:hover {
+                    background: #f0f0f0;
+                }
+                .show-controls-btn.hidden {
+                    display: none;
+                }
 
-                #clearFilters { display: none; }
-                #clearFilters.visible { display: inline-block; }
+                /* Clear filters button - initially hidden */
+                #clearFilters {
+                    display: none;
+                }
+                #clearFilters.visible {
+                    display: inline-block;
+                }
 
+                /* Keyboard shortcut hint */
                 .shortcut-hint {
                     font-size: 11px;
                     color: #999;
                     margin-left: 4px;
                 }
 
+                /* Toast notification */
                 .toast {
                     position: fixed;
                     bottom: 30px;
@@ -291,25 +337,70 @@
                     font-size: 14px;
                 }
                 @keyframes slideIn {
-                    from { opacity: 0; transform: translateY(20px); }
-                    to   { opacity: 1; transform: translateY(0); }
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
                 }
 
+                /* ---------- DARK MODE ---------- */
                 @media (prefers-color-scheme: dark) {
-                    body { background: #1a1a1a; color: #e0e0e0; }
-                    .header { background: #2d2d2d; border-bottom-color: #444; }
-                    .controls { background: #2d2d2d; }
-                    .collection-header { background: #2d2d2d; }
-                    .collection-header:hover { background: #383838; }
-                    .album-card { background: #2d2d2d; color: #e0e0e0; border-color: #444; }
-                    .album-card:hover { border-color: #666; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
-                    .album-card img { background: #3d3d3d; }
-                    .meta { color: #aaa; }
-                    .boxed-group { background: #3d3d3d; border-color: #555; }
-                    .boxed-group .view-label { color: #e0e0e0; }
-                    .boxed-group label { color: #aaa; }
+                    body {
+                        background: #1a1a1a;
+                        color: #e0e0e0;
+                    }
+
+                    .header {
+                        background: #2d2d2d;
+                        border-bottom-color: #444;
+                    }
+
+                    .controls {
+                        background: #2d2d2d;
+                    }
+
+                    .collection-header {
+                        background: #2d2d2d;
+                    }
+                    .collection-header:hover {
+                        background: #383838;
+                    }
+
+                    .album-card {
+                        background: #2d2d2d;
+                        color: #e0e0e0;
+                        border-color: #444;
+                    }
+                    .album-card:hover {
+                        border-color: #666;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+                    }
+                    .album-card img {
+                        background: #3d3d3d;
+                    }
+
+                    .meta {
+                        color: #aaa;
+                    }
+
+                    .boxed-group {
+                        background: #3d3d3d;
+                        border-color: #555;
+                    }
+                    .boxed-group .view-label {
+                        color: #e0e0e0;
+                    }
+                    .boxed-group label {
+                        color: #aaa;
+                    }
                     .boxed-group .grid-icon,
-                    .boxed-group .list-icon { color: #888; }
+                    .boxed-group .list-icon {
+                        color: #888;
+                    }
                     .boxed-group input[type="text"],
                     .boxed-group input[type="number"] {
                         background: #3d3d3d;
@@ -317,22 +408,66 @@
                         color: #e0e0e0;
                     }
                     .boxed-group input[type="text"]:focus,
-                    .boxed-group input[type="number"]:focus { border-color: #4fc3f7; }
-                    .boxed-group button { color: #e0e0e0; }
-                    .boxed-group button:hover { background: #4d4d4d; }
-                    .controls-toggle { border-color: #555; color: #e0e0e0; }
-                    .controls-toggle:hover { background: #3d3d3d; }
-                    .show-controls-btn { border-color: #555; color: #e0e0e0; }
-                    .show-controls-btn:hover { background: #3d3d3d; }
-                    .collection-level-0 > .collection-header { border-left-color: #4fc3f7; }
-                    .collection-level-1 > .collection-header { border-left-color: #81c784; }
-                    .collection-level-2 > .collection-header { border-left-color: #ffd54f; }
-                    .collection-level-3 > .collection-header { border-left-color: #ef5350; }
-                    .toggle-slider { background-color: #555; }
-                    input:checked + .toggle-slider { background-color: #4fc3f7; }
-                    .collection-header a { color: #4fc3f7; }
-                    .header a { color: #4fc3f7; }
-                    .toast { background: #444; color: #e0e0e0; }
+                    .boxed-group input[type="number"]:focus {
+                        border-color: #4fc3f7;
+                    }
+                    .boxed-group button {
+                        color: #e0e0e0;
+                    }
+                    .boxed-group button:hover {
+                        background: #4d4d4d;
+                    }
+
+                    /* Controls toggle in dark mode */
+                    .controls-toggle {
+                        border-color: #555;
+                        color: #e0e0e0;
+                    }
+                    .controls-toggle:hover {
+                        background: #3d3d3d;
+                    }
+
+                    .show-controls-btn {
+                        border-color: #555;
+                        color: #e0e0e0;
+                    }
+                    .show-controls-btn:hover {
+                        background: #3d3d3d;
+                    }
+
+                    /* Collection level indicators - dark mode colors */
+                    .collection-level-0 > .collection-header {
+                        border-left-color: #4fc3f7;
+                    }
+                    .collection-level-1 > .collection-header {
+                        border-left-color: #81c784;
+                    }
+                    .collection-level-2 > .collection-header {
+                        border-left-color: #ffd54f;
+                    }
+                    .collection-level-3 > .collection-header {
+                        border-left-color: #ef5350;
+                    }
+
+                    /* Toggle switch in dark mode */
+                    .toggle-slider {
+                        background-color: #555;
+                    }
+                    input:checked + .toggle-slider {
+                        background-color: #4fc3f7;
+                    }
+
+                    .collection-header a {
+                        color: #4fc3f7;
+                    }
+                    .header a {
+                        color: #4fc3f7;
+                    }
+
+                    .toast {
+                        background: #444;
+                        color: #e0e0e0;
+                    }
                 }
             </style>
         </head>
@@ -346,8 +481,8 @@
                     <a href="https://www.flickr.com/photos/dp3" target="_blank">Dan</a>'s
                     <a href="https://www.flickr.com/">Flickr</a> sitemap
                     <div class="meta">
-                        94 collections •
-                        526 albums •
+                        104 collections •
+                        528 albums •
                         162,465 photos
                         <span class="shortcut-hint">| (Ctrl+F or / to search)</span>
                     </div>
@@ -356,12 +491,14 @@
             </div>
 
             <div class="controls" id="controls">
+                <!-- Filter inputs group -->
                 <div class="boxed-group">
                     <input id="search" placeholder="Search">
                     <input id="minPhotos" type="number" placeholder="Min photos">
                     <label><input type="checkbox" id="hasVideos"> has video</label>
                 </div>
 
+                <!-- View toggle group -->
                 <div class="boxed-group">
                     <span class="grid-icon">▦</span>
                     <label class="toggle-switch">
@@ -372,6 +509,7 @@
                     <span class="view-label" id="viewLabel">Grid</span>
                 </div>
 
+                <!-- Action buttons group -->
                 <div class="boxed-group">
                     <button onclick="expandAll()">Expand all</button>
                     <button onclick="collapseAll()">Collapse all</button>
@@ -379,10 +517,462 @@
                     <button onclick="exportData()">📤 Export</button>
                 </div>
 
+                <!-- Controls toggle button -->
                 <button class="controls-toggle" onclick="toggleControls()" id="controlsToggle" title="Hide controls">✕</button>
             </div>
 
             
+            <div class="collection collection-level-0">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725521689718" target="_blank">Billund, Denmark Trip 2026</a>
+                        <div class="meta">
+                            10 collections •
+                             22 albums 
+                            • 111 photos 
+                            • 1 videos
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                    </div>
+                    
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725580343060" target="_blank">Billund Shopping 2026</a>
+                        <div class="meta">
+                            
+                             3 albums 
+                            • 11 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333622888" target="_blank" data-title="floh grindsted 2026" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55380767226_54a3fd0729_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Floh Grindsted 2026</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334690147" target="_blank" data-title="minifigure factory" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54761715288_eef906e9ca_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Minifigure Factory</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335453741" target="_blank" data-title="billund trip 2026 souvenirs" data-photos="7" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55380767226_54a3fd0729_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund Trip 2026 Souvenirs</div>
+                                    <div class="meta">
+                                        7 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725533970037" target="_blank">Billund Food 2026</a>
+                        <div class="meta">
+                            
+                             2 albums 
+                            • 7 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333596498" target="_blank" data-title="billund bageri 2026" data-photos="3" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55262622088_1f5494dc64_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund Bageri 2026</div>
+                                    <div class="meta">
+                                        3 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334251363" target="_blank" data-title="other billund food 2026" data-photos="4" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55339538635_67833b48b9_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Other Billund food 2026</div>
+                                    <div class="meta">
+                                        4 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725527169606" target="_blank">Billund Sculptures and Walking Trails 2026</a>
+                        <div class="meta">
+                            
+                             1 albums 
+                            • 1 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333508068" target="_blank" data-title="billund outside 2026" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55252173131_10b21573ee_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund outside 2026</div>
+                                    <div class="meta">
+                                        1 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725580203210" target="_blank">Billund Travel 2026</a>
+                        <div class="meta">
+                            
+                             3 albums 
+                            • 9 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333502609" target="_blank" data-title="billund travel to 2026" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55249362253_860d65a693_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund travel to 2026</div>
+                                    <div class="meta">
+                                        1 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333478318" target="_blank" data-title="philadelphia airport 2026" data-photos="5" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55249362253_860d65a693_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Philadelphia Airport 2026</div>
+                                    <div class="meta">
+                                        5 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335479275" target="_blank" data-title="billund travel from 2026" data-photos="3" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55350167318_92ee5f3499_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund travel from 2026</div>
+                                    <div class="meta">
+                                        3 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725580175480" target="_blank">LEGOLAND Billund 2026</a>
+                        <div class="meta">
+                            
+                             1 albums 
+                            • 9 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333722963" target="_blank" data-title="legoland billund 2026" data-photos="9" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55277555393_b5d3aca035_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGOLAND Billund 2026</div>
+                                    <div class="meta">
+                                        9 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157724812318679" target="_blank">Other Denmark Trip 2026</a>
+                        <div class="meta">
+                            
+                             1 albums 
+                            • 13 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720330713562" target="_blank" data-title="billund trip 2026" data-photos="13" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54963869273_240ce99977_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund Trip 2026</div>
+                                    <div class="meta">
+                                        13 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725521975933" target="_blank">LEGO Inside Tour 3 (LIT 3) 2026</a>
+                        <div class="meta">
+                            
+                             1 albums 
+                            • 11 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720330740454" target="_blank" data-title="lego inside tour 2026" data-photos="11" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55282590026_4db4fbdf38_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGO Inside Tour 2026</div>
+                                    <div class="meta">
+                                        11 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725533833512" target="_blank">LEGOLAND Billund Hotels 2026</a>
+                        <div class="meta">
+                            
+                             3 albums 
+                            • 20 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333944756" target="_blank" data-title="legoland billund legoland wilderness campground" data-photos="7" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55304639499_ea0fff03cc_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGOLAND Billund LEGOLAND Wilderness Campground</div>
+                                    <div class="meta">
+                                        7 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333840965" target="_blank" data-title="legoland billund legoland hotel 2026" data-photos="7" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55293325670_c1e2212ed9_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGOLAND Billund LEGOLAND Hotel 2026</div>
+                                    <div class="meta">
+                                        7 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333742035" target="_blank" data-title="legoland billund legoland hotel park view room" data-photos="6" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55281460658_4c91563b7a_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGOLAND Billund LEGOLAND Hotel Park View Room</div>
+                                    <div class="meta">
+                                        6 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725523395669" target="_blank">Teddy Bear Art Museum 2026</a>
+                        <div class="meta">
+                            
+                             5 albums 
+                            • 13 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334120547" target="_blank" data-title="teddy bear art museum tableau exhibition 2026" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55326203895_d0371d7449_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Teddy Bear Art Museum Tableau Exhibition 2026</div>
+                                    <div class="meta">
+                                        1 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333769019" target="_blank" data-title="teddy bear art museum vanderbear exhibition 2026" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55280369222_7c3ae65a17_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Teddy Bear Art Museum Vanderbear Exhibition 2026</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333623721" target="_blank" data-title="teddy bears on adventures in art" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55266947986_7a917299a8_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Teddy Bears on Adventures in Art</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334187410" target="_blank" data-title="teddy bear art museum teddy bear sewing course" data-photos="6" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55333742934_627780501c_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Teddy Bear Art Museum Teddy Bear Sewing Course</div>
+                                    <div class="meta">
+                                        6 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333867081" target="_blank" data-title="teddy bear art museum artist teddy bears 2026" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55294835832_159623d11d_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Teddy Bear Art Museum Artist Teddy Bears 2026</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-1">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157725521696288" target="_blank">LEGO House 2026</a>
+                        <div class="meta">
+                            
+                             2 albums 
+                            • 17 photos 
+                            • 1 videos
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334195919" target="_blank" data-title="lego house cars designer evening" data-photos="4" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55331332224_bd2b8723d5_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGO House Cars Designer Evening</div>
+                                    <div class="meta">
+                                        4 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333496336" target="_blank" data-title="lego house 2026" data-photos="13" data-videos="1">
+                                <img src="https://farm66.staticflickr.com/65535/55262759039_54f8e4d46f_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGO House 2026</div>
+                                    <div class="meta">
+                                        13 photos  • 1 videos
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+                </div>
+            </div>
             <div class="collection collection-level-0">
                 <div class="collection-header" onclick="toggle(this)">
                     <span>
@@ -994,237 +1584,6 @@
                                 <img src="https://farm1.staticflickr.com/125/30778748623_a3bede1a86_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Other LEGO WIP</div>
-                                    <div class="meta">
-                                        12 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="collection collection-level-0">
-                <div class="collection-header" onclick="toggle(this)">
-                    <span>
-                        <a href="https://www.flickr.com/photos/dp3/collections/72157724812318679" target="_blank">Denmark Trip 2026</a>
-                        <div class="meta">
-                            
-                             21 albums 
-                            • 109 photos 
-                            • 1 videos
-                        </div>
-                    </span>
-                    <span class="toggle">[+]</span>
-                </div>
-
-                <div class="children">
-                    <div class="albums">
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335479275" target="_blank" data-title="billund travel from 2026" data-photos="3" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55350167318_92ee5f3499_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Billund travel from 2026</div>
-                                    <div class="meta">
-                                        3 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335453741" target="_blank" data-title="billund trip 2026 souvenirs" data-photos="7" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55380767226_54a3fd0729_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Billund Trip 2026 Souvenirs</div>
-                                    <div class="meta">
-                                        7 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334690147" target="_blank" data-title="minifigure factory" data-photos="2" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/54761715288_eef906e9ca_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Minifigure Factory</div>
-                                    <div class="meta">
-                                        2 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334120547" target="_blank" data-title="teddy bear art museum tableau exhibition 2026" data-photos="1" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55326203895_d0371d7449_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Teddy Bear Art Museum Tableau Exhibition 2026</div>
-                                    <div class="meta">
-                                        1 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333596498" target="_blank" data-title="billund bageri 2026" data-photos="3" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55262622088_1f5494dc64_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Billund Bageri 2026</div>
-                                    <div class="meta">
-                                        3 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333769019" target="_blank" data-title="teddy bear art museum vanderbear exhibition 2026" data-photos="2" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55280369222_7c3ae65a17_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Teddy Bear Art Museum Vanderbear Exhibition 2026</div>
-                                    <div class="meta">
-                                        2 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333622888" target="_blank" data-title="floh grindsted 2026" data-photos="2" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55380767226_54a3fd0729_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Floh Grindsted 2026</div>
-                                    <div class="meta">
-                                        2 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333722963" target="_blank" data-title="legoland billund 2026" data-photos="9" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55277555393_b5d3aca035_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGOLAND Billund 2026</div>
-                                    <div class="meta">
-                                        9 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333623721" target="_blank" data-title="teddy bears on adventures in art" data-photos="2" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55266947986_7a917299a8_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Teddy Bears on Adventures in Art</div>
-                                    <div class="meta">
-                                        2 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333944756" target="_blank" data-title="legoland billund legoland wilderness campground" data-photos="7" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55304639499_ea0fff03cc_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGOLAND Billund LEGOLAND Wilderness Campground</div>
-                                    <div class="meta">
-                                        7 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334187410" target="_blank" data-title="teddy bear art museum teddy bear sewing course" data-photos="6" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55333742934_627780501c_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Teddy Bear Art Museum Teddy Bear Sewing Course</div>
-                                    <div class="meta">
-                                        6 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333742035" target="_blank" data-title="legoland billund legoland hotel park view room" data-photos="6" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55281460658_4c91563b7a_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGOLAND Billund LEGOLAND Hotel Park View Room</div>
-                                    <div class="meta">
-                                        6 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333840965" target="_blank" data-title="legoland billund legoland hotel 2026" data-photos="7" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55293325670_c1e2212ed9_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGOLAND Billund LEGOLAND Hotel 2026</div>
-                                    <div class="meta">
-                                        7 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333867081" target="_blank" data-title="teddy bear art museum artist teddy bears 2026" data-photos="2" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55294835832_159623d11d_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Teddy Bear Art Museum Artist Teddy Bears 2026</div>
-                                    <div class="meta">
-                                        2 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333478318" target="_blank" data-title="philadelphia airport 2026" data-photos="5" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55249362253_860d65a693_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Philadelphia Airport 2026</div>
-                                    <div class="meta">
-                                        5 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334195919" target="_blank" data-title="lego house cars designer evening" data-photos="4" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55331332224_bd2b8723d5_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGO House Cars Designer Evening</div>
-                                    <div class="meta">
-                                        4 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333508068" target="_blank" data-title="billund outside 2026" data-photos="1" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55252173131_10b21573ee_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Billund outside 2026</div>
-                                    <div class="meta">
-                                        1 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333496336" target="_blank" data-title="lego house 2026" data-photos="13" data-videos="1">
-                                <img src="https://farm66.staticflickr.com/65535/55262759039_54f8e4d46f_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGO House 2026</div>
-                                    <div class="meta">
-                                        13 photos  • 1 videos
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334251363" target="_blank" data-title="other billund food 2026" data-photos="4" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55339538635_67833b48b9_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Other Billund food 2026</div>
-                                    <div class="meta">
-                                        4 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720330740454" target="_blank" data-title="lego inside tour 2026" data-photos="11" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/55282590026_4db4fbdf38_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">LEGO Inside Tour 2026</div>
-                                    <div class="meta">
-                                        11 photos  
-                                    </div>
-                                </div>
-                            </a>
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720330713562" target="_blank" data-title="billund trip 2026" data-photos="12" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/54963869273_240ce99977_q.jpg" loading="lazy" onerror="this.style.display='none'">
-                                <div class="album-info">
-                                    <div class="album-title">Billund Trip 2026</div>
                                     <div class="meta">
                                         12 photos  
                                     </div>
@@ -8317,6 +8676,37 @@
                     
                 </div>
             </div>
+            <div class="collection collection-level-0">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="#" target="">📁 Uncategorized Albums</a>
+                        <div class="meta">
+                            
+                             1 albums 
+                            • 1 photos 
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335563874" target="_blank" data-title="lego store passport stamps" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55249362253_860d65a693_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">LEGO Store Passport Stamps</div>
+                                    <div class="meta">
+                                        1 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
 
             <script>
                 // Preset baked in at generation time. Server has already
@@ -8366,12 +8756,14 @@
                     setView(view);
                 });
 
+                // ---------- Controls Toggle ----------
                 function toggleControls() {
                     const controls = document.getElementById('controls');
                     const toggleBtn = document.getElementById('controlsToggle');
                     const showBtn = document.getElementById('showControlsBtn');
                     const isHidden = controls.classList.toggle('hidden-controls');
 
+                    // Update buttons
                     if (isHidden) {
                         toggleBtn.style.display = 'none';
                         showBtn.classList.remove('hidden');
@@ -8384,6 +8776,7 @@
                         toggleBtn.title = 'Hide controls';
                     }
 
+                    // Update URL
                     const p = new URLSearchParams(window.location.search);
                     if (isHidden) {
                         p.set('hideControls', '1');
@@ -8399,11 +8792,14 @@
                     const showBtn = document.getElementById('showControlsBtn');
                     const p = new URLSearchParams(window.location.search);
 
+                    // Check URL parameter first, then localStorage, then default to visible
                     const hideControls = p.get('hideControls');
                     let shouldHide;
+
                     if (hideControls !== null) {
                         shouldHide = hideControls === '1';
                     } else {
+                        // Fallback to localStorage
                         const saved = localStorage.getItem('controlsVisible');
                         shouldHide = saved === 'false';
                     }
@@ -8441,30 +8837,65 @@
                     vid ? p.set("hasVideos","1") : p.delete("hasVideos");
                     history.replaceState({}, '', location.pathname + '?' + p);
 
-                    document.querySelectorAll(".album-card").forEach(el => {
-                        const show = el.dataset.title.includes(q)
-                            && (+el.dataset.photos) >= min
-                            && (!vid || +el.dataset.videos > 0);
-                        el.classList.toggle("hidden", !show);
+                    // Find collections whose own title matches the search.
+                    // Albums inside a matching collection (including nested
+                    // sub-collections) will all be shown, regardless of
+                    // their own title.
+                    const matchingCollections = new Set();
+                    document.querySelectorAll(".collection").forEach(col => {
+                        const titleEl = col.querySelector(":scope > .collection-header a");
+                        if (!titleEl) return;
+                        if (q && titleEl.textContent.toLowerCase().includes(q)) {
+                            (function mark(c) {
+                                matchingCollections.add(c);
+                                c.querySelectorAll(":scope > .children > .collection").forEach(mark);
+                            })(col);
+                        }
                     });
 
+                    // Filter albums
+                    document.querySelectorAll(".album-card").forEach(el => {
+                        // Walk up the DOM to see if any ancestor collection matched
+                        let ancestorMatch = false;
+                        let node = el.closest(".collection");
+                        while (node) {
+                            if (matchingCollections.has(node)) {
+                                ancestorMatch = true;
+                                break;
+                            }
+                            node = node.parentElement
+                                ? node.parentElement.closest(".collection")
+                                : null;
+                        }
+
+                        const matchesAlbumFilters = (+el.dataset.photos) >= min
+                            && (!vid || +el.dataset.videos > 0);
+                        const matchesSearch = !q
+                            || el.dataset.title.includes(q)
+                            || ancestorMatch;
+                        el.classList.toggle("hidden", !(matchesAlbumFilters && matchesSearch));
+                    });
+
+                    // Show/hide collections based on visible albums
                     document.querySelectorAll(".collection").forEach(col => {
                         const visibleAlbums = col.querySelectorAll(".album-card:not(.hidden)");
                         const hasVisible = visibleAlbums.length > 0;
 
                         col.classList.toggle("hidden", !hasVisible);
 
+                        // Use :scope so we only target this collection's own
+                        // header, not nested ones.
+                        const i = col.querySelector(":scope > .collection-header span:last-child");
                         if (hasVisible) {
                             col.classList.add("open");
-                            const i = col.querySelector(".collection-header span:last-child");
-                            if(i) i.textContent = "[-]";
+                            if (i) i.textContent = "[-]";
                         } else {
                             col.classList.remove("open");
-                            const i = col.querySelector(".collection-header span:last-child");
-                            if(i) i.textContent = "[+]";
+                            if (i) i.textContent = "[+]";
                         }
                     });
 
+                    // Show/hide clear filters button
                     const clearBtn = document.getElementById("clearFilters");
                     const hasFilters = q || min > 0 || vid;
                     if (hasFilters) {
@@ -8473,6 +8904,7 @@
                         clearBtn.classList.remove("visible");
                     }
 
+                    // handle no albums remaining
                     const visibleAlbums = document.querySelectorAll(".album-card:not(.hidden)");
                     const noResultsMsg = document.getElementById('noResults');
                     if (visibleAlbums.length === 0) {
@@ -8492,6 +8924,7 @@
                 document.getElementById("minPhotos").oninput = filter;
                 document.getElementById("hasVideos").onchange = filter;
 
+                // ---------- Toast Notification ----------
                 function showToast(message) {
                     const existing = document.querySelector('.toast');
                     if (existing) existing.remove();
@@ -8503,13 +8936,16 @@
                     setTimeout(() => toast.remove(), 2000);
                 }
 
+                // ---------- Export Feature ----------
                 function collectData() {
                     function processCollection(col) {
+                        // Skip if collection is hidden (no visible albums)
                         if (col.classList.contains('hidden')) return null;
 
                         const title = col.querySelector(".collection-header a")?.textContent || "Untitled";
                         const result = { title, albums: [], collections: [] };
 
+                        // Get direct albums in this collection
                         col.querySelectorAll(":scope > .children > .albums > .album-card:not(.hidden)").forEach(card => {
                             result.albums.push({
                                 title: card.querySelector(".album-title")?.textContent || "Untitled",
@@ -8519,6 +8955,7 @@
                             });
                         });
 
+                        // Process child collections recursively
                         col.querySelectorAll(":scope > .children > .collection").forEach(childCol => {
                             const childData = processCollection(childCol);
                             if (childData) {
@@ -8526,6 +8963,7 @@
                             }
                         });
 
+                        // Only return if it has albums or child collections
                         if (result.albums.length === 0 && result.collections.length === 0) {
                             return null;
                         }
@@ -8535,7 +8973,9 @@
                     const data = [];
                     document.querySelectorAll("body > .collection").forEach(col => {
                         const result = processCollection(col);
-                        if (result) data.push(result);
+                        if (result) {
+                            data.push(result);
+                        }
                     });
                     return data;
                 }
@@ -8544,8 +8984,8 @@
                     const data = {
                         generated: new Date().toISOString(),
                         user: "Dan",
-                        totalCollections: 94,
-                        totalAlbums: 526,
+                        totalCollections: 104,
+                        totalAlbums: 528,
                         totalPhotos: 162465,
                         collections: collectData()
                     };
@@ -8562,12 +9002,16 @@
                     showToast("📤 Export complete!");
                 }
 
+                // ---------- Keyboard Shortcuts ----------
                 document.addEventListener('keydown', function(e) {
+                    // Don't trigger shortcuts if user is typing in an input
                     const tag = e.target.tagName;
                     const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
 
+                    // Ctrl+F or / to focus search (but not when typing in inputs)
                     if (!isInput && ((e.ctrlKey && e.key === 'f') || e.key === '/')) {
                         e.preventDefault();
+                        // If controls are hidden, show them first
                         if (document.getElementById('controls').classList.contains('hidden-controls')) {
                             toggleControls();
                         }
@@ -8576,8 +9020,10 @@
                         search.select();
                     }
 
+                    // Escape to clear filters (works anywhere)
                     if (e.key === 'Escape') {
                         const search = document.getElementById('search');
+                        // If search has focus and is not empty, clear it
                         if (document.activeElement === search && search.value) {
                             resetFilters();
                             search.blur();
