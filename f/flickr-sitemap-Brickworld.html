@@ -43,6 +43,49 @@
                 .header img{width:48px; height:48px; border-radius:50%}
                 .header-title {
                     flex: 1;
+                    min-width: 0;
+                }
+                .header-extras {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    gap: 6px 12px;
+                    max-width: 40%;
+                    font-size: 0.9em;
+                    text-align: right;
+                }
+                .header-about {
+                    flex-basis: 100%;
+                    margin: 0;
+                    white-space: pre-line;
+                }
+                .header-links,
+                .header-socials {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                }
+                .header-socials .social-icon {
+                    width: 1em;
+                    height: 1em;
+                    object-fit: contain;
+                    vertical-align: -0.15em;
+                }
+                .header-extras a {
+                    font-size: 1em;
+                    font-weight: normal;
+                }
+                @media (max-width: 700px) {
+                    .header {
+                        flex-wrap: wrap;
+                    }
+                    .header-extras {
+                        flex: 1 0 100%;
+                        max-width: none;
+                        justify-content: flex-start;
+                        margin-left: 58px;
+                        text-align: left;
+                    }
                 }
                 .controls{
                     display:flex;
@@ -485,12 +528,13 @@
                     <a href="https://www.flickr.com/photos/dp3" target="_blank">Dan</a>'s
                     <a href="https://www.flickr.com/">Flickr</a> sitemap
                     <div class="meta">
-                        107 collections •
-                        550 albums •
-                        162,791 photos
+                        110 collections •
+                        583 albums •
+                        162,851 photos
                         <span class="shortcut-hint">| (Ctrl+F or / to search)</span>
                     </div>
                 </div>
+                <div class="header-extras"><p class="header-about">Dan is a shy but active and storied LEGO artist, toy collector, software engineer, and traveller</p><nav class="header-socials" aria-label="Social links"><a href="https://linktr.ee/DanPikora" target="_blank" rel="noopener noreferrer" aria-label="Linktree"><img class="social-icon" src="https://cdn.simpleicons.org/linktree" alt="Linktree" title="Linktree" loading="lazy"></a><a href="https://www.flickr.com/photos/dp3/" target="_blank" rel="noopener noreferrer" aria-label="Flickr"><img class="social-icon" src="https://cdn.simpleicons.org/flickr" alt="Flickr" title="Flickr" loading="lazy"></a><a href="https://www.patreon.com/DanPikora" target="_blank" rel="noopener noreferrer" aria-label="Patreon"><img class="social-icon" src="https://cdn.simpleicons.org/patreon" alt="Patreon" title="Patreon" loading="lazy"></a><a href="https://www.youtube.com/@danpikora" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img class="social-icon" src="https://cdn.simpleicons.org/youtube" alt="YouTube" title="YouTube" loading="lazy"></a><a href="https://discord.gg/Pks9Gea9Us" target="_blank" rel="noopener noreferrer" aria-label="Discord"><img class="social-icon" src="https://cdn.simpleicons.org/discord" alt="Discord" title="Discord" loading="lazy"></a><a href="https://github.com/danny316p" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img class="social-icon" src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub" loading="lazy"></a></nav></div>
                 <button class="show-controls-btn hidden" onclick="toggleControls()" id="showControlsBtn" title="Show controls">🔍</button>
             </div>
 
@@ -532,8 +576,8 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157633704184697" target="_blank">My LEGO creations</a>
                         <div class="meta">
                             
-                             60 albums 
-                            • 1,729 photos 
+                             61 albums 
+                            • 1,731 photos 
                             • 32 videos
                             
                         </div>
@@ -674,6 +718,16 @@
                                 </div>
                             </a>
                         
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720321661166" target="_blank" data-title="xenoball run mocs" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55547581519_85eb164ff3_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Xenoball Run MOCs</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
                             <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720321525054" target="_blank" data-title="metropolis square" data-photos="13" data-videos="1">
                                 <img src="https://farm66.staticflickr.com/65535/54283019607_33ff24d583_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
@@ -684,12 +738,12 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720329591732" target="_blank" data-title="coral reef / mermaid park pavilion" data-photos="2" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720329591732" target="_blank" data-title="coral reef / mermaid park pavilion" data-photos="3" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/54811235671_9c596484d0_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Coral Reef / Mermaid Park Pavilion</div>
                                     <div class="meta">
-                                        2 photos  
+                                        3 photos  
                                     </div>
                                 </div>
                             </a>
@@ -1154,8 +1208,8 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157725521689718" target="_blank">Billund, Denmark Trip 2026</a>
                         <div class="meta">
                             11 collections •
-                             24 albums 
-                            • 94 photos 
+                             25 albums 
+                            • 137 photos 
                             • 1 video
                             
                         </div>
@@ -1300,8 +1354,8 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157725527169606" target="_blank">Billund Sculptures and Walking Trails 2026</a>
                         <div class="meta">
                             
-                             1 album 
-                            • 1 photo 
+                             2 albums 
+                            • 2 photos 
                             
                             
                         </div>
@@ -1311,6 +1365,16 @@
 
                 <div class="children">
                     <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335534017" target="_blank" data-title="billund trip 2026 legende børn" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55531318604_772311f931_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund Trip 2026 Legende Børn</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
                         
                             <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333508068" target="_blank" data-title="billund outside 2026" data-photos="1" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/55252173131_10b21573ee_q.jpg" loading="lazy" onerror="this.style.display='none'">
@@ -1533,7 +1597,7 @@
                         <div class="meta">
                             
                              6 albums 
-                            • 15 photos 
+                            • 58 photos 
                             
                             
                         </div>
@@ -1574,22 +1638,22 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334187410" target="_blank" data-title="teddy bear art museum teddy bear sewing course" data-photos="7" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720334187410" target="_blank" data-title="teddy bear art museum teddy bear sewing course" data-photos="21" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/55333742934_627780501c_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Teddy Bear Art Museum Teddy Bear Sewing Course</div>
                                     <div class="meta">
-                                        7 photos  
+                                        21 photos  
                                     </div>
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335652958" target="_blank" data-title="post-teddy bear sewing course shenanigans" data-photos="3" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335652958" target="_blank" data-title="post-teddy bear sewing course shenanigans" data-photos="32" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/55443915375_9c74f7816d_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Post-Teddy Bear Sewing Course Shenanigans</div>
                                     <div class="meta">
-                                        3 photos  
+                                        32 photos  
                                     </div>
                                 </div>
                             </a>
@@ -1659,7 +1723,7 @@
                         <div class="meta">
                             
                              22 albums 
-                            • 1,891 photos 
+                            • 1,893 photos 
                             
                             
                         </div>
@@ -1840,12 +1904,12 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72157625008372684" target="_blank" data-title="acquiring lego" data-photos="377" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72157625008372684" target="_blank" data-title="acquiring lego" data-photos="379" data-videos="0">
                                 <img src="https://farm5.staticflickr.com/4147/5013854038_b7dddee44c_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Acquiring LEGO</div>
                                     <div class="meta">
-                                        377 photos  
+                                        379 photos  
                                     </div>
                                 </div>
                             </a>
@@ -1899,9 +1963,9 @@
                     <span>
                         <a href="https://www.flickr.com/photos/dp3/collections/72157724814298601" target="_blank">LEGO Fan events</a>
                         <div class="meta">
-                            32 collections •
-                             204 albums 
-                            • 106,184 photos 
+                            35 collections •
+                             234 albums 
+                            • 106,198 photos 
                             • 137 videos
                             
                         </div>
@@ -1919,9 +1983,9 @@
                     <span>
                         <a href="https://www.flickr.com/photos/dp3/collections/72157724814384466" target="_blank">AFOL Conventions and Expositions</a>
                         <div class="meta">
-                            20 collections •
-                             146 albums 
-                            • 86,626 photos 
+                            23 collections •
+                             176 albums 
+                            • 86,640 photos 
                             • 116 videos
                             
                         </div>
@@ -1937,11 +2001,359 @@
             <div class="collection collection-level-2">
                 <div class="collection-header" onclick="toggle(this)">
                     <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157726525464417" target="_blank">Empire Brick Con 2025</a>
+                        <div class="meta">
+                            3 collections •
+                             26 albums 
+                            • 40 photos 
+                            
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                    </div>
+                    
+            <div class="collection collection-level-3">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157724812375094" target="_blank">Empire Brick Con 2025 Displays</a>
+                        <div class="meta">
+                            
+                             19 albums 
+                            • 36 photos 
+                            
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336132025" target="_blank" data-title="empire brick con 2025 john k" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877604613_50c0eb55d4_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 John K</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335520796" target="_blank" data-title="empire brick con 2025 mural and death star" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54879104569_653b83666e_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Mural and Death Star</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336115912" target="_blank" data-title="empire brick con 2025 gbc" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54876512532_daf5c08731_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 GBC</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336132005" target="_blank" data-title="empire brick con 2025 rich" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877381111_a2d4fab92b_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Rich</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336132020" target="_blank" data-title="empire brick con 2025 daniel pikora" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877488689_dc9bb09952_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Daniel Pikora</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336134280" target="_blank" data-title="empire brick con 2025 matt" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54876512787_4632098ab0_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Matt</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336138806" target="_blank" data-title="empire brick con 2025 chuck" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877381166_8519cda6bc_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Chuck</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336134270" target="_blank" data-title="empire brick con 2025 owen" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877381256_c5a7ea849a_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Owen</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336110393" target="_blank" data-title="empire brick con 2025 judy" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877625079_315243cca1_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Judy</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336133067" target="_blank" data-title="empire brick con 2025 steel city lug" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877381176_15ea6e9ce7_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Steel City LUG</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336139531" target="_blank" data-title="empire brick con 2025 derek" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877604518_2d4f87e836_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Derek</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336132030" target="_blank" data-title="empire brick con 2025 i lug ny" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877488689_dc9bb09952_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 I LUG NY</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336138631" target="_blank" data-title="empire brick con 2025 keith" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877625479_9a59a1e535_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Keith</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336132000" target="_blank" data-title="empire brick con 2025 cny" data-photos="2" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877672350_53370056f9_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 CNY</div>
+                                    <div class="meta">
+                                        2 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336132010" target="_blank" data-title="empire brick con 2025 brian baum / toysontheside" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877381111_a2d4fab92b_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Brian Baum / toysontheside</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335521251" target="_blank" data-title="empire brick con 2025 jessica" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54876512882_5bc9765e4d_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Jessica</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336133052" target="_blank" data-title="empire brick con 2025 zeke" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877625259_b8b0673f3f_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Zeke</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335515795" target="_blank" data-title="empire brick con 2025 amber" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877381316_7a4e5cee85_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Amber</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335520801" target="_blank" data-title="empire brick con 2025" data-photos="36" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877625079_315243cca1_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025</div>
+                                    <div class="meta">
+                                        36 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-3">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157726516849111" target="_blank">Empire Brick Con 2025 Activities</a>
+                        <div class="meta">
+                            
+                             5 albums 
+                            • 40 photos 
+                            
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335520781" target="_blank" data-title="empire brick con 2025 signage / meta / maps" data-photos="7" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54872111937_89733cdc76_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 signage / meta / maps</div>
+                                    <div class="meta">
+                                        7 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336151787" target="_blank" data-title="empire brick con 2025 corning museum of glass store" data-photos="3" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54875395119_57a4a5db21_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Corning Museum of Glass Store</div>
+                                    <div class="meta">
+                                        3 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336146314" target="_blank" data-title="empire brick con 2025 themed food" data-photos="4" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54877889722_9e04b291c0_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Themed Food</div>
+                                    <div class="meta">
+                                        4 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336150672" target="_blank" data-title="empire brick con 2025 private activities" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54947327128_2bf18a6a82_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Private Activities</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720336158311" target="_blank" data-title="empire brick con 2025 public previews" data-photos="40" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54870087782_f066cd5db9_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Empire Brick Con 2025 Public Previews</div>
+                                    <div class="meta">
+                                        40 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="collection collection-level-3">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
+                        <a href="https://www.flickr.com/photos/dp3/collections/72157726580572375" target="_blank">Corning Museum of Glass</a>
+                        <div class="meta">
+                            
+                             2 albums 
+                            • 5 photos 
+                            
+                            
+                        </div>
+                    </span>
+                    <span class="toggle">[+]</span>
+                </div>
+
+                <div class="children">
+                    <div class="albums">
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335532473" target="_blank" data-title="corning museum of glass" data-photos="4" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54871489477_f9e9a3ab54_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Corning Museum of Glass</div>
+                                    <div class="meta">
+                                        4 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335520791" target="_blank" data-title="my minilanders at corning museum of glass" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54876500087_e7639c18e2_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">My minilanders at Corning Museum of Glass</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+                </div>
+            </div>
+            <div class="collection collection-level-2">
+                <div class="collection-header" onclick="toggle(this)">
+                    <span>
                         <a href="https://www.flickr.com/photos/dp3/collections/72157725423233976" target="_blank">Brickomanie Events</a>
                         <div class="meta">
                             1 collection •
-                             4 albums 
-                            • 5 photos 
+                             8 albums 
+                            • 18 photos 
                             • 3 videos
                             
                         </div>
@@ -1960,8 +2372,8 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157725429947327" target="_blank">Brickomanie 2026</a>
                         <div class="meta">
                             
-                             4 albums 
-                            • 5 photos 
+                             8 albums 
+                            • 18 photos 
                             • 3 videos
                             
                         </div>
@@ -1992,62 +2404,70 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335229680" target="_blank" data-title="brickomanie 2026" data-photos="4" data-videos="3">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335524563" target="_blank" data-title="brickomanie 2026 knifex skelenby" data-photos="8" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55487712057_59cf5f2a40_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Brickomanie 2026 Knifex Skelenby</div>
+                                    <div class="meta">
+                                        8 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335521286" target="_blank" data-title="brickomanie 2026 daniel pikora" data-photos="7" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55488696901_e815ae2f75_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Brickomanie 2026 Daniel Pikora</div>
+                                    <div class="meta">
+                                        7 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335229680" target="_blank" data-title="brickomanie 2026" data-photos="14" data-videos="3">
                                 <img src="https://farm66.staticflickr.com/65535/55479281951_b5d2eeea7a_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Brickomanie 2026</div>
                                     <div class="meta">
-                                        4 photos  • 3 videos
+                                        14 photos  • 3 videos
                                     </div>
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335502367" target="_blank" data-title="brickomanie 2026 unsorted" data-photos="4" data-videos="3">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335219377" target="_blank" data-title="brickomanie trip 2026" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55581239781_94d53b68c8_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Brickomanie Trip 2026</div>
+                                    <div class="meta">
+                                        1 photo  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335502367" target="_blank" data-title="brickomanie 2026 unsorted" data-photos="14" data-videos="3">
                                 <img src="https://farm66.staticflickr.com/65535/55479281951_b5d2eeea7a_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Brickomanie 2026 unsorted</div>
                                     <div class="meta">
-                                        4 photos  • 3 videos
+                                        14 photos  • 3 videos
                                     </div>
                                 </div>
                             </a>
                         
-                    </div>
-                    
-                </div>
-            </div>
-                </div>
-            </div>
-            <div class="collection collection-level-2">
-                <div class="collection-header" onclick="toggle(this)">
-                    <span>
-                        <a href="https://www.flickr.com/photos/dp3/collections/72157724812375094" target="_blank">Empire Brick Con 2025</a>
-                        <div class="meta">
-                            
-                             1 album 
-                            • 40 photos 
-                            
-                            
-                        </div>
-                    </span>
-                    <span class="toggle">[+]</span>
-                </div>
-
-                <div class="children">
-                    <div class="albums">
-                        
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720329829073" target="_blank" data-title="corning 2025 unsorted " data-photos="40" data-videos="0">
-                                <img src="https://farm66.staticflickr.com/65535/54870087782_f066cd5db9_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720335499340" target="_blank" data-title="brickomanie trip 2026 unsorted" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55581239781_94d53b68c8_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
-                                    <div class="album-title">Corning 2025 unsorted </div>
+                                    <div class="album-title">Brickomanie Trip 2026 unsorted</div>
                                     <div class="meta">
-                                        40 photos  
+                                        1 photo  
                                     </div>
                                 </div>
                             </a>
                         
                     </div>
                     
+                </div>
+            </div>
                 </div>
             </div>
             <div class="collection collection-level-2">
@@ -2992,8 +3412,8 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157724814342976" target="_blank">BrickUniverse Events</a>
                         <div class="meta">
                             3 collections •
-                             21 albums 
-                            • 4,834 photos 
+                             22 albums 
+                            • 4,835 photos 
                             • 4 videos
                             
                         </div>
@@ -3012,8 +3432,8 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157724259931729" target="_blank">BrickUniverse Carlisle 2023</a>
                         <div class="meta">
                             
-                             3 albums 
-                            • 78 photos 
+                             4 albums 
+                            • 79 photos 
                             • 1 video
                             
                         </div>
@@ -3024,12 +3444,22 @@
                 <div class="children">
                     <div class="albums">
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720329585107" target="_blank" data-title="brickuniverse carlisle 2023" data-photos="78" data-videos="1">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720329585107" target="_blank" data-title="brickuniverse carlisle 2023" data-photos="79" data-videos="1">
                                 <img src="https://farm66.staticflickr.com/65535/54844419887_5b2e203b26_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">BrickUniverse Carlisle 2023</div>
                                     <div class="meta">
-                                        78 photos  • 1 video
+                                        79 photos  • 1 video
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720329603788" target="_blank" data-title="brickuniverse carlisle 2023 snaillug" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/54846324065_26df184413_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">BrickUniverse Carlisle 2023 SnailLUG</div>
+                                    <div class="meta">
+                                        1 photo  
                                     </div>
                                 </div>
                             </a>
@@ -4667,7 +5097,7 @@
                         <div class="meta">
                             
                              6 albums 
-                            • 88 photos 
+                            • 89 photos 
                             
                             
                         </div>
@@ -4698,12 +5128,12 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72157625988476971" target="_blank" data-title="bears" data-photos="82" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72157625988476971" target="_blank" data-title="bears" data-photos="83" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/54808170665_a3d49bd757_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Bears</div>
                                     <div class="meta">
-                                        82 photos  
+                                        83 photos  
                                     </div>
                                 </div>
                             </a>
@@ -7302,7 +7732,7 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157724809164948" target="_blank">Denmark Trip 2019</a>
                         <div class="meta">
                             2 collections •
-                             3 albums 
+                             4 albums 
                             • 17 photos 
                             
                             
@@ -7354,7 +7784,7 @@
                         <a href="https://www.flickr.com/photos/dp3/collections/72157724814235291" target="_blank">Other Denmark Trip 2019</a>
                         <div class="meta">
                             
-                             2 albums 
+                             3 albums 
                             • 15 photos 
                             
                             
@@ -7366,12 +7796,22 @@
                 <div class="children">
                     <div class="albums">
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333333988" target="_blank" data-title="billund 2019 unsorted" data-photos="3" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720333333988" target="_blank" data-title="billund 2019 unsorted" data-photos="4" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/49445294861_95725dec4d_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Billund 2019 unsorted</div>
                                     <div class="meta">
-                                        3 photos  
+                                        4 photos  
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720320499741" target="_blank" data-title="billund airport 2019" data-photos="1" data-videos="0">
+                                <img src="https://farm66.staticflickr.com/65535/55230235360_0e12287081_q.jpg" loading="lazy" onerror="this.style.display='none'">
+                                <div class="album-info">
+                                    <div class="album-title">Billund airport 2019</div>
+                                    <div class="meta">
+                                        1 photo  
                                     </div>
                                 </div>
                             </a>
@@ -7629,7 +8069,7 @@
                         <div class="meta">
                             
                              5 albums 
-                            • 60 photos 
+                            • 62 photos 
                             
                             
                         </div>
@@ -7640,12 +8080,12 @@
                 <div class="children">
                     <div class="albums">
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720326517395" target="_blank" data-title="patreon previews" data-photos="19" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720326517395" target="_blank" data-title="patreon previews" data-photos="20" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/54557801892_840cc5099d_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Patreon Previews</div>
                                     <div class="meta">
-                                        19 photos  
+                                        20 photos  
                                     </div>
                                 </div>
                             </a>
@@ -7660,12 +8100,12 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72157632569687399" target="_blank" data-title="injuries/surgeries" data-photos="15" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72157632569687399" target="_blank" data-title="injuries/surgeries" data-photos="16" data-videos="0">
                                 <img src="https://farm9.staticflickr.com/8476/8399656505_556eb04510_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Injuries/Surgeries</div>
                                     <div class="meta">
-                                        15 photos  
+                                        16 photos  
                                     </div>
                                 </div>
                             </a>
@@ -7775,7 +8215,7 @@
                         <div class="meta">
                             
                              4 albums 
-                            • 69 photos 
+                            • 70 photos 
                             
                             
                         </div>
@@ -7806,12 +8246,12 @@
                                 </div>
                             </a>
                         
-                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720320508565" target="_blank" data-title="other food" data-photos="52" data-videos="0">
+                            <a class="album-card" href="https://www.flickr.com/photos/21770216@N08/albums/72177720320508565" target="_blank" data-title="other food" data-photos="53" data-videos="0">
                                 <img src="https://farm66.staticflickr.com/65535/53024970008_9404d48eed_q.jpg" loading="lazy" onerror="this.style.display='none'">
                                 <div class="album-info">
                                     <div class="album-title">Other Food</div>
                                     <div class="meta">
-                                        52 photos  
+                                        53 photos  
                                     </div>
                                 </div>
                             </a>
@@ -9377,9 +9817,9 @@
                     const data = {
                         generated: new Date().toISOString(),
                         user: "Dan",
-                        totalCollections: 107,
-                        totalAlbums: 550,
-                        totalPhotos: 162791,
+                        totalCollections: 110,
+                        totalAlbums: 583,
+                        totalPhotos: 162851,
                         collections: collectData()
                     };
 
